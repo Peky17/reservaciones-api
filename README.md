@@ -13,8 +13,15 @@ Sigue estos pasos para instalar y configurar la aplicación:
     ```shell
     npm install
 
+4. Abre la documentación Swagger
+
+    http://localhost:2450/api-docs
+
 ## Ejecución en modo de desarrollo
     npm run dev 
 
 ## Ejecución en modo de producción
     npm run dev 
+
+## Correr test en un controller
+    npx jest nameController.test.js
