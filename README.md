@@ -14,11 +14,7 @@ Sigue estos pasos para instalar y configurar la aplicación:
     npm install
 
 ## Ejecución en modo de desarrollo
-
-    ```shell 
     npm run dev 
 
 ## Ejecución en modo de producción
-    
-    ```shell 
-        npm run dev 
+    npm run dev 
