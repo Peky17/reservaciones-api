@@ -1,9 +1,9 @@
 const Funcion = require("../../models/cine/funcion");
 
 const createFuncion = async (req, res) => {
-  const { nombre, horario, precio, duracion, sala } = req.body;
+  const { nombre, horario, precio, duracion, cine } = req.body;
   const id = req.uid;
-  const nuevaFuncion = new Funcion({ nombre, horario, precio, duracion, sala, creator: id });
+  const nuevaFuncion = new Funcion({ nombre, horario, precio, duracion, cine, creator: id });
   try {
     await nuevaFuncion.save();
     res.status(200).json({

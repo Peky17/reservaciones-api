@@ -1,4 +1,5 @@
 const Cine = require("../../models/cine/cine");
+const Funcion = require("../../models/cine/funcion");
 
 const createCine = async (req, res) => {
   const { nombre, horario } = req.body;
@@ -54,6 +55,33 @@ const searchCinesById = async (req, res) => {
   }
 };
 
+const getAllFuncionesByCine = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const funciones = await Funcion.find({ cine: id });
+
+    if (!funciones || funciones.length === 0) {
+      return res.status(404).json({
+        ok: false,
+        msg: "No se encontraron funciones para el cine proporcionado",
+      });
+    }
+
+    return res.status(200).json({
+      ok: true,
+      msg: "Funciones encontradas",
+      funciones,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      ok: false,
+      msg: "Error al buscar funciones",
+    });
+  }
+};
+
 const updateCine = async (req, res) => {
   const { id } = req.params;
   const { nombre, horario } = req.body;
@@ -96,6 +124,7 @@ module.exports = {
   createCine,
   listarCines,
   searchCinesById,
+  getAllFuncionesByCine,
   updateCine,
   deleteCine,
 };

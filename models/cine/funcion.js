@@ -22,10 +22,6 @@ const Funcion = new Schema({
     type: Number,
     trim: true,
   },
-  sala: {
-    type: Schema.Types.ObjectId,
-    ref: "Sala",
-  },
   cine: {
     type: Schema.Types.ObjectId,
     ref: "Cine",

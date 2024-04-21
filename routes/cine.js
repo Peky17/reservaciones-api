@@ -4,6 +4,7 @@ const {
   createCine,
   listarCines,
   searchCinesById,
+  getAllFuncionesByCine,
   updateCine,
   deleteCine,
 } = require("../controllers/cine/cineController");
@@ -31,6 +32,7 @@ router.get("/getAllCines", [verifyToken], listarCines);
 router.put("/updateCine/:id", [verifyToken], updateCine);
 router.delete("/deleteCine/:id", [verifyToken], deleteCine);
 router.get("/searchCinesById/:id", [verifyToken], searchCinesById);
+router.get("/getAllFuncionesByCine/:id", [verifyToken], getAllFuncionesByCine);
 // Rutas de las tareas CRUD sala
 router.post("/createSala", [verifyToken], createSala);
 router.get("/getAllSalas", [verifyToken], listarSalas);

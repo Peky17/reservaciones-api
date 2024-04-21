@@ -913,6 +913,38 @@
         }
       }
     },
+    "/cines/getAllFuncionesByCine/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/cines/createSala": {
       "post": {
         "description": "",
@@ -1106,7 +1138,7 @@
                 "duracion": {
                   "example": "any"
                 },
-                "sala": {
+                "cine": {
                   "example": "any"
                 }
               }
