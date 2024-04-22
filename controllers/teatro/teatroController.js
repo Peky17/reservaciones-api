@@ -1,4 +1,5 @@
 const Teatro = require("../../models/teatro/teatro");
+const Obra = require("../../models/teatro/obra");
 
 const createTeatro = async (req, res) => {
   const { nombre, horario } = req.body;
@@ -51,6 +52,33 @@ const searchTeatroById = async (req, res) => {
   }
 };
 
+const getAllObrasByTeatro = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const obras = await Obra.find({ teatro: id });
+
+    if (!obras || obras.length === 0) {
+      return res.status(404).json({
+        ok: false,
+        msg: "No se encontraron obras para el cine proporcionado",
+      });
+    }
+
+    return res.status(200).json({
+      ok: true,
+      msg: "obras encontradas",
+      obras,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      ok: false,
+      msg: "Error al buscar obras",
+    });
+  }
+};
+
 const updateTeatro = async (req, res) => {
   const { id } = req.params;
   const { nombre, horario } = req.body;
@@ -95,4 +123,5 @@ module.exports = {
   searchTeatroById,
   updateTeatro,
   deleteTeatro,
+  getAllObrasByTeatro
 };

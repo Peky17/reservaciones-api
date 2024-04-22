@@ -6,6 +6,7 @@ const {
   searchTeatroById,
   updateTeatro,
   deleteTeatro,
+  getAllObrasByTeatro
 } = require("../controllers/teatro/teatroController");
 const {
   createSeccion,
@@ -31,6 +32,7 @@ router.get("/getAllTeatros", [verifyToken], listarTeatros);
 router.put("/updateTeatro/:id", [verifyToken], updateTeatro);
 router.delete("/deleteTeatro/:id", [verifyToken], deleteTeatro);
 router.get("/searchTeatroById/:id", [verifyToken], searchTeatroById);
+router.get("/getAllObrasByTeatro/:id", [verifyToken], getAllObrasByTeatro);
 // Rutas de las tareas CRUD seccion
 router.post("/createSeccion", [verifyToken], createSeccion);
 router.get("/getAllSecciones", [verifyToken], listarSecciones);
