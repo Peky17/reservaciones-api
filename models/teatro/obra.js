@@ -12,10 +12,6 @@ const Obra = new Schema({
     type: String,
     trim: true,
   },
-  // seccion: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Seccion",
-  // },
   teatro: {
     type: Schema.Types.ObjectId,
     ref: "Teatro",

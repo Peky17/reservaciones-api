@@ -1,9 +1,9 @@
 const Obra = require("../../models/teatro/obra");
 
 const createObra = async (req, res) => {
-  const { nombre, horario, seccion, teatro } = req.body;
+  const { nombre, horario, teatro } = req.body;
   const id = req.uid;
-  const nuevaObra = new Obra({ nombre, horario, seccion, teatro, creator: id });
+  const nuevaObra = new Obra({ nombre, horario, teatro, creator: id });
   try {
     await nuevaObra.save();
     res.status(200).json({
@@ -53,7 +53,7 @@ const searchObraById = async (req, res) => {
 
 const updateObra = async (req, res) => {
   const { id } = req.params;
-  const { nombre, horario, seccion, teatro } = req.body;
+  const { nombre, horario, teatro } = req.body;
   try {
     const obra = await Obra.findByIdAndUpdate(id, {
       nombre,
