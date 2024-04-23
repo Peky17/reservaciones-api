@@ -1,15 +1,19 @@
 const { Schema, model } = require("mongoose");
 // Schema para tareas
-const Carrito = new Schema({
-  obra: {
-    type: Schema.Types.ObjectId,
-    ref: "Obra",
+const Reservaciones = new Schema({
+  concepto: {
+    type: String,
+    required: true,
   },
   cantidad: {
     type: Number,
     required: true,
   },
-  importe: {
+  unitario: {
+    type: Number,
+    required: true,
+  },
+  total: {
     type: Number,
     required: true,
   },
@@ -23,4 +27,4 @@ const Carrito = new Schema({
   },
 });
 
-module.exports = model("Carrito", Carrito);
+module.exports = model("Reservaciones", Reservaciones);

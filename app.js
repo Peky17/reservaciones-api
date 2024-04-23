@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 // Importar routers
 const authRouter = require("./routes/auth");
+const reservacionesRouter = require("./routes/reservaciones");
 const museosRouter = require("./routes/museo");
 // Routes for teatro
 const teatrosRouter = require("./routes/teatro");
@@ -25,6 +26,7 @@ app.use("/auth", authRouter);
 app.use("/museos", museosRouter);
 app.use("/teatros", teatrosRouter);
 app.use("/cines", cinesRouter);
+app.use("/reservaciones", reservacionesRouter);
 
 // Swagger documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
