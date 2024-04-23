@@ -631,6 +631,9 @@
                 "horario": {
                   "example": "any"
                 },
+                "precio": {
+                  "example": "any"
+                },
                 "teatro": {
                   "example": "any"
                 }
@@ -696,6 +699,9 @@
                   "example": "any"
                 },
                 "horario": {
+                  "example": "any"
+                },
+                "precio": {
                   "example": "any"
                 },
                 "teatro": {

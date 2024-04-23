@@ -12,6 +12,10 @@ const Obra = new Schema({
     type: String,
     trim: true,
   },
+  precio: {
+    required: true,
+    type: Number,
+  },
   teatro: {
     type: Schema.Types.ObjectId,
     ref: "Teatro",
