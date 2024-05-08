@@ -8,6 +8,7 @@ let mongoServer;
 let token;
 
 beforeAll(async () => {
+  // Inicializar el servidor de MongoDB en memoria
   if (mongoose.connection.readyState !== 0) {
     await mongoose.disconnect();
   }
