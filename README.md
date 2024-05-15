@@ -1,6 +1,6 @@
-# Mi API con Express.js y Node.js
+# API clon de ticketmaster con Express.js y Node.js
 
-Este es el repositorio de mi API desarrollada en Express.js y Node.js.
+Este es el repositorio del API del sistema de reservaciones tocketmaster
 
 ## Instalación
 
